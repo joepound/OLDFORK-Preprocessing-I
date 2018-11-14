@@ -133,7 +133,7 @@ table {
 	===============================
 */
 /*
-	Site-wide selectors
+	Element-level selectors
 */
 * {
   box-sizing: border-box;
@@ -150,9 +150,19 @@ img {
   width: 100%;
   height: auto;
 }
+th {
+  font-weight: bold;
+  text-align: left;
+}
 .container {
+  /*
+		Site-wide selectors
+	*/
   max-width: 880px;
   margin: 20px auto 0;
+  /*
+		Home page styles
+	*/
 }
 .container nav {
   display: flex;
@@ -187,41 +197,38 @@ img {
   text-align: center;
   font-weight: bold;
 }
-/*
-	Home page styles
-*/
-.profile {
+.container .profile {
   background-color: #E9ECEF;
   padding: 40px 25px;
   margin: 30px 0;
 }
-.profile .profile-heading {
+.container .profile .profile-heading {
   padding-bottom: 30px;
   border-bottom: 1px solid silver;
   margin: 5px 0 15px;
 }
-.profile .profile-heading .profile-heading__photo {
+.container .profile .profile-heading__photo {
   width: 30%;
 }
-.profile .profile-heading .profile-heading__name {
+.container .profile .profile-heading__name {
   font-size: 4rem;
   font-family: "Roboto Mono";
   margin: 5px 0 15px;
 }
-.profile .profile-heading .profile-heading__caption {
+.container .profile .profile-heading__caption {
   font-size: 1.4rem;
   font-family: "Calibri";
   font-weight: bold;
   margin-left: 10px;
 }
-.profile .profile__description {
+.container .profile__description {
   font-size: 1.5rem;
   font-family: "Calibri";
   line-height: 1.5;
   width: 70%;
   margin: 20px 0;
 }
-.profile .profile__collab-button {
+.container .profile__collab-button {
   display: inline-block;
   background-color: grey;
   color: snow;
@@ -232,13 +239,72 @@ img {
   padding: 15px;
   margin: 5px 0;
 }
-.profile .profile__collab-button:hover {
+.container .profile__collab-button:hover {
   box-shadow: 1px 1px 1px 1px black;
   transition-duration: 250ms;
   transition-property: all;
 }
-.profile .profile__collab-button:active {
+.container .profile__collab-button:active {
   box-shadow: none;
   border: 1px solid black;
   margin: 4px 0;
+}
+.container .resume-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 30px 0;
+}
+.container .resume-content .professional-statement {
+  width: 45%;
+  margin: 5px 0;
+}
+.container .resume-content .professional-statement h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.container .resume-content .professional-statement p {
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+.container .resume-content .skill-list {
+  width: 45%;
+  margin: 5px 0;
+}
+.container .resume-content .skill-list h2 {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.container .resume-content .skill-list li {
+  display: block;
+  font-size: 1.8rem;
+  padding: 10px;
+  border: 1px solid silver;
+}
+.container .resume-content .work-history {
+  width: 100%;
+  margin: 30px 0 5px;
+}
+.container .resume-content .work-history h2 {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.container .resume-content .work-history table {
+  background-color: white;
+  font-size: 1.5rem;
+  width: 100%;
+}
+.container .resume-content .work-history table tr {
+  width: 100%;
+  border: 1px solid silver;
+}
+.container .resume-content .work-history table tr th,
+.container .resume-content .work-history table tr td {
+  padding: 15px 10px;
+}
+.container .resume-content .work-history table tr:nth-child(even) {
+  background-color: snow;
 }

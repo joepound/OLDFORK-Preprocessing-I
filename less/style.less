@@ -55,7 +55,7 @@ table {
 */
 
 /*
-	Site-wide selectors
+	Element-level selectors
 */
 
 * {
@@ -76,7 +76,16 @@ img {
 	height: auto;
 }
 
+th {
+	font-weight: bold;
+	text-align: left;
+}
+
 .container {
+	/*
+		Site-wide selectors
+	*/
+
 	max-width: 880px;
 	margin: 20px auto 0;
 
@@ -119,28 +128,28 @@ img {
 			font-weight: bold;
 		}
 	}
-}
 
-/*
-	Home page styles
-*/
+	/*
+		Home page styles
+	*/
 
-// Fonts
-@profile-name-font: "Roboto Mono";
-@profile-font: "Calibri";
+	// Fonts
+	@profile-name-font: "Roboto Mono";
+	@profile-font: "Calibri";
 
-// Colors
-@profile-bg-color: #E9ECEF;
+	// Colors
+	@profile-bg-color: #E9ECEF;
 
-.profile {
-	background-color: @profile-bg-color;
-	padding: 40px 25px;
-	margin: 30px 0;
+	.profile {
+		background-color: @profile-bg-color;
+		padding: 40px 25px;
+		margin: 30px 0;
 
-	.profile-heading {
-		padding-bottom: 30px;
-		border-bottom: 1px solid silver;
-		margin: 5px 0 15px;
+		.profile-heading {
+			padding-bottom: 30px;
+			border-bottom: 1px solid silver;
+			margin: 5px 0 15px;
+		}
 
 		.profile-heading__photo {
 			width: 30%;
@@ -190,5 +199,76 @@ img {
 		box-shadow: none;
 		border: 1px solid black;
 		margin: 4px 0;
+	}
+
+	.resume-content {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		margin: 30px 0;
+
+		.professional-statement {
+			width: 45%;
+			margin: 5px 0;
+
+			h2 {
+				font-size: 2.5rem;
+				font-weight: bold;
+				margin-bottom: 15px;
+			}
+
+			p {
+				font-size: 1.5rem;
+				line-height: 1.5;
+			}
+		}
+
+		.skill-list {
+			width: 45%;
+			margin: 5px 0;
+
+			h2 {
+				font-size: 2.25rem;
+				font-weight: bold;
+				margin-bottom: 15px;
+			}
+
+			li {
+				display: block;
+				font-size: 1.8rem;
+				padding: 10px;
+				border: 1px solid silver;
+			}
+		}
+
+		.work-history {
+			width: 100%;
+			margin: 30px 0 5px;
+
+			h2 {
+				font-size: 2.25rem;
+				font-weight: bold;
+				margin-bottom: 20px;
+			}
+			
+			table {
+				background-color: white;
+				font-size: 1.5rem;
+				width: 100%;
+
+				tr {
+					width: 100%;
+					border: 1px solid silver;
+
+					th, td {
+						padding: 15px 10px;
+					}
+				}
+
+				tr:nth-child(even) {
+					background-color: snow;
+				}
+			}
+		}
 	}
 }
