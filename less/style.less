@@ -100,7 +100,6 @@ th {
 			font-size: 1.6rem;
 			font-weight: bold;
 			padding: 20px;
-
 		}
 
 		a:hover {
@@ -113,6 +112,23 @@ th {
 		a:active {
 			border: 2.5px solid grey;
 			margin: -2.5px;
+		}
+
+		@media (max-width: 500px) {
+			flex-direction: column;
+			justify-content: flex-start;
+			text-align: center;
+			
+			a {
+				width: 100%;
+				border-top: 1px solid silver;
+				border-bottom: 1px solid silver;
+			}
+
+			a:active {
+				border: 2.5px solid grey;
+				margin: -2.5px 0;
+			}
 		}
 	}
 

@@ -186,6 +186,22 @@ th {
   border: 2.5px solid grey;
   margin: -2.5px;
 }
+@media (max-width: 500px) {
+  .container nav {
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+  }
+  .container nav a {
+    width: 100%;
+    border-top: 1px solid silver;
+    border-bottom: 1px solid silver;
+  }
+  .container nav a:active {
+    border: 2.5px solid grey;
+    margin: -2.5px 0;
+  }
+}
 .container footer {
   background-color: grey;
   padding: 20px 0;
