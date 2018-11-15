@@ -80,7 +80,12 @@ th {
 	font-weight: bold;
 }
 
-@container-max-width: 880px;
+@mobile-max-width: ~"(max-width: 500px)";
+
+.container-sizing {
+	max-width: 880px;
+	margin: 20px auto 0;
+}
 
 .container {
 	
@@ -88,8 +93,13 @@ th {
 		Site-wide styling
 	*/
 
-	@mobile-max-width: ~"(max-width: 500px)";
-	@table-font-size: 1.5rem;
+	.nav--mobile-restyling() {
+		@media @mobile-max-width {
+			flex-direction: column;
+			justify-content: flex-start;
+			text-align: center;
+		}
+	}
 
 	.fading-transition() {
 		transition-duration: 250ms;
@@ -120,19 +130,13 @@ th {
 		}
 	}
 
-	max-width: @container-max-width;
-	margin: 20px auto 0;
+	.container-sizing();
 
 	nav {
 		display: flex;
 		justify-content: flex-end;
 		margin-bottom: 37.5px;
-
-		@media @mobile-max-width {
-			flex-direction: column;
-			justify-content: flex-start;
-			text-align: center;
-		}
+		.nav--mobile-restyling();
 
 		a {
 			color: black;
@@ -186,9 +190,10 @@ th {
 		Home page selectors
 	*/
 
-	// Fonts
+	// Font styling
 	@profile-name-font: "Roboto Mono";
 	@profile-font: "Calibri";
+	@table-font-size: 1.5rem;
 
 	// Colors
 	@profile-bg-color: #E9ECEF;

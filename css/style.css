@@ -153,6 +153,10 @@ img {
 th {
   font-weight: bold;
 }
+.container-sizing {
+  max-width: 880px;
+  margin: 20px auto 0;
+}
 .container {
   /*
 		Site-wide styling
