@@ -55,7 +55,7 @@ table {
 */
 
 /*
-	Element-level selectors
+	Element-level styling
 */
 
 * {
@@ -78,15 +78,49 @@ img {
 
 th {
 	font-weight: bold;
-	text-align: left;
 }
 
+@container-max-width: 880px;
+
 .container {
+	
 	/*
-		Site-wide selectors
+		Site-wide styling
 	*/
 
-	max-width: 880px;
+	@mobile-max-width: ~"(max-width: 500px)";
+	@table-font-size: 1.5rem;
+
+	.fading-transition() {
+		transition-duration: 250ms;
+		transition-property: all;
+	}
+
+	.two-column-spacing() {
+		width: 45%;
+		margin: 5px;
+	}
+
+	.table--alternating-color-rows() {
+		font-size: @table-font-size;
+		text-align: left;
+		width: 100%;
+
+		tr {
+			width: 100%;
+			border: 1px solid silver;
+
+			&:nth-child(even) {
+				background-color: snow;
+			}
+
+			th, td {
+				padding: 15px 10px;
+			}
+		}
+	}
+
+	max-width: @container-max-width;
 	margin: 20px auto 0;
 
 	nav {
@@ -94,7 +128,7 @@ th {
 		justify-content: flex-end;
 		margin-bottom: 37.5px;
 
-		@media (max-width: 500px) {
+		@media @mobile-max-width {
 			flex-direction: column;
 			justify-content: flex-start;
 			text-align: center;
@@ -107,7 +141,7 @@ th {
 			font-weight: bold;
 			padding: 20px;
 
-			@media (max-width: 500px) {
+			@media @mobile-max-width {
 				width: 100%;
 				border-top: 1px solid silver;
 				border-bottom: 0.5px solid silver;
@@ -116,15 +150,14 @@ th {
 			&:hover {
 				background-color: silver;
 				color: snow;
-				transition-duration: 250ms;
-				transition-property: all;
+				.fading-transition();
 			}
 	
 			&:active {
 				border: 2.5px solid grey;
 				margin: -2.5px;
 	
-				@media (max-width: 500px) {
+				@media @mobile-max-width {
 					border: 2.5px solid grey;
 					margin: -2.5px 0;
 				}
@@ -143,7 +176,7 @@ th {
 			text-align: center;
 			font-weight: bold;
 
-			@media (max-width: 500px) {
+			@media @mobile-max-width {
 				font-size: 1rem;
 			}
 		}
@@ -160,12 +193,24 @@ th {
 	// Colors
 	@profile-bg-color: #E9ECEF;
 
+	.resume-content--header-name() {
+		h2 {
+			font-size: 2.25rem;
+			font-weight: bold;
+			margin-bottom: 15px;
+
+			@media @mobile-max-width {
+				font-size: 1.2rem;
+			}
+		}
+	}
+
 	.profile {
 		background-color: @profile-bg-color;
 		padding: 40px 25px;
 		margin: 30px 0;
 
-		@media (max-width: 500px) {
+		@media @mobile-max-width {
 			padding: 20px 25px;
 		}
 
@@ -184,7 +229,7 @@ th {
 			font-family: @profile-name-font;
 			margin: 5px 0 15px;
 
-			@media (max-width: 500px) {
+			@media @mobile-max-width {
 				font-size: 1.6rem;
 				font-weight: bold;
 			}
@@ -196,7 +241,7 @@ th {
 			font-weight: bold;
 			margin-left: 10px;
 
-			@media (max-width: 500px) {
+			@media @mobile-max-width {
 				font-size: 1.2rem;
 				font-weight: normal;
 				margin-left: 5px;
@@ -225,8 +270,7 @@ th {
 
 		&:hover {
 			box-shadow: 1px 1px 1px 1px black;		
-			transition-duration: 250ms;
-			transition-property: all;
+			.fading-transition();
 		}
 	
 		&:active {
@@ -243,43 +287,23 @@ th {
 		margin: 30px 0;
 
 		.professional-statement {
-			width: 45%;
-			margin: 5px;
-
-			h2 {
-				font-size: 2.5rem;
-				font-weight: bold;
-				margin-bottom: 15px;
-
-				@media (max-width: 500px) {
-					font-size: 1.5rem;
-				}
-			}
+			.two-column-spacing();
+			.resume-content--header-name();
 
 			p {
 				font-size: 1.5rem;
 				line-height: 1.5;
 
-				@media (max-width: 500px) {
-					font-size: 1.2rem;
+				@media @mobile-max-width {
+					font-size: 1.1rem;
 				}
 			}
 			
 		}
 
 		.skill-list {
-			width: 45%;
-			margin: 5px 5px;
-
-			h2 {
-				font-size: 2.25rem;
-				font-weight: bold;
-				margin-bottom: 15px;
-
-				@media (max-width: 500px) {
-					font-size: 1.5rem;
-				}
-			}
+			.two-column-spacing();
+			.resume-content--header-name();
 
 			li {
 				display: block;
@@ -287,50 +311,25 @@ th {
 				padding: 10px;
 				border: 1px solid silver;
 
-				@media (max-width: 500px) {
+				@media @mobile-max-width {
 					font-size: 1.2rem;
 				}
 			}
 		}
 
 		.work-history {
+			.resume-content--header-name();
 			width: 100%;
 			margin: 30px 5px 5px;
-
-			h2 {
-				font-size: 2.25rem;
-				font-weight: bold;
-				margin-bottom: 20px;
-			}
 			
 			table {
-				background-color: white;
-				font-size: 1.5rem;
-				width: 100%;
-
-				tr {
-					width: 100%;
-					border: 1px solid silver;
-
-					th, td {
-						padding: 15px 10px;
-					}
-				}
-
-				tr:nth-child(even) {
-					background-color: snow;
-				}
+				.table--alternating-color-rows();
 			}
 		}
 
 		.contact {
+			.resume-content--header-name();
 			margin: 30px 5px 5px;
-
-			h2 {
-				font-size: 2.25rem;
-				font-weight: bold;
-				margin-bottom: 20px;
-			}
 
 			address {
 				font-size: 1.2rem;
