@@ -161,7 +161,7 @@ th {
   max-width: 880px;
   margin: 20px auto 0;
   /*
-		Home page styles
+		Home page selectors
 	*/
 }
 .container nav {
@@ -370,4 +370,18 @@ th {
 }
 .container .resume-content .work-history table tr:nth-child(even) {
   background-color: snow;
+}
+.container .resume-content .contact {
+  margin: 30px 5px 5px;
+}
+.container .resume-content .contact h2 {
+  font-size: 2.25rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.container .resume-content .contact address {
+  font-size: 1.2rem;
+  font-style: italic;
+  line-height: 1.5;
+  margin-left: 10px;
 }
