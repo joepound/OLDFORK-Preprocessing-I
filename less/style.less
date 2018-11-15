@@ -112,22 +112,22 @@ th {
 				border-top: 1px solid silver;
 				border-bottom: 0.5px solid silver;
 			}
-		}
 
-		a:hover {
-			background-color: silver;
-			color: snow;
-			transition-duration: 250ms;
-			transition-property: all;
-		}
-
-		a:active {
-			border: 2.5px solid grey;
-			margin: -2.5px;
-
-			@media (max-width: 500px) {
+			&:hover {
+				background-color: silver;
+				color: snow;
+				transition-duration: 250ms;
+				transition-property: all;
+			}
+	
+			&:active {
 				border: 2.5px solid grey;
-				margin: -2.5px 0;
+				margin: -2.5px;
+	
+				@media (max-width: 500px) {
+					border: 2.5px solid grey;
+					margin: -2.5px 0;
+				}
 			}
 		}
 	}
@@ -222,18 +222,18 @@ th {
 		font-weight: bold;
 		padding: 15px;
 		margin: 5px 0;
-	}
 
-	.profile__collab-button:hover {
-		box-shadow: 1px 1px 1px 1px black;		
-		transition-duration: 250ms;
-		transition-property: all;
-	}
-
-	.profile__collab-button:active {
-		box-shadow: none;
-		border: 1px solid black;
-		margin: 4px 0;
+		&:hover {
+			box-shadow: 1px 1px 1px 1px black;		
+			transition-duration: 250ms;
+			transition-property: all;
+		}
+	
+		&:active {
+			box-shadow: none;
+			border: 1px solid black;
+			margin: 4px 0;
+		}	
 	}
 
 	.resume-content {
