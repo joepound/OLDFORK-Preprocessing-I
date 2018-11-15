@@ -183,18 +183,18 @@ th {
   font-weight: bold;
   padding: 20px;
 }
+@media (max-width: 500px) {
+  .container nav a {
+    width: 100%;
+    border-top: 1px solid silver;
+    border-bottom: 0.5px solid silver;
+  }
+}
 .container nav a:hover {
   background-color: silver;
   color: snow;
   transition-duration: 250ms;
   transition-property: all;
-}
-@media (max-width: 500px) {
-  .container nav a:hover {
-    width: 100%;
-    border-top: 1px solid silver;
-    border-bottom: 1px solid silver;
-  }
 }
 .container nav a:active {
   border: 2.5px solid grey;
