@@ -1,3 +1,9 @@
+# [NOTICE: this is an old fork]
+
+This repository has been left intact for posterity.
+
+WIP continues here: https://github.com/joepound/Preprocessing-I
+
 # Preprocessing I: Digital Resume
 
 For this project you will be building a digital resume from scratch. You will be required to use specific preprocessing skills to accomplish your tasks.  
